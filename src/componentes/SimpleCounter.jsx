@@ -2,6 +2,7 @@ import { Row, Col, Image, Container } from "react-bootstrap";
 import { BsClockHistory } from "react-icons/bs";
 import { Bs0SquareFill } from "react-icons/bs";
 import { FaClock } from "react-icons/fa6";
+// testing
 
 export function SimpleCounter(props) {
   const d1 = Math.floor((props.seconds / Math.pow(10, 1 - 1)) % 10);
