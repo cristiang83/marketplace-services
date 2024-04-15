@@ -1,13 +1,15 @@
-import { CounterContainer } from "@/componentes/CounterContainer";
-import { Button, Container, Row, Col} from "react-bootstrap";
-import { Login } from "@/componentes/Login";
 
-
+import { Home } from "@/componentes/Home";
+import { ProviderCard } from "@/componentes/ProviderCard";
+import { Provider, ProviderDetail } from "@/componentes/ProviderDetail";
+import { Providers } from "@/componentes/Providers";
+import { ServicesList } from "@/componentes/ServicesList";
+import { ProviderRegistrer } from "@/componentes/ProviderRegistrer";
 
 export default function () {
   return (
     <>
-    <Login/>
- </>
-  )
+      <ProviderRegistrer />
+    </>
+  );
 }
