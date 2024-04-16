@@ -1,4 +1,3 @@
-
 import { Home } from "@/componentes/Home";
 import { ProviderCard } from "@/componentes/ProviderCard";
 import { Provider, ProviderDetail } from "@/componentes/ProviderDetail";
@@ -9,7 +8,7 @@ import { ProviderRegistrer } from "@/componentes/ProviderRegistrer";
 export default function () {
   return (
     <>
-      <ProviderRegistrer />
+      <ServicesList />
     </>
   );
 }
