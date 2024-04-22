@@ -1,14 +1,12 @@
-import { Home } from "@/componentes/Home";
-import { ProviderCard } from "@/componentes/ProviderCard";
-import { Provider, ProviderDetail } from "@/componentes/ProviderDetail";
-import { Providers } from "@/componentes/Providers";
-import { ServicesList } from "@/componentes/ServicesList";
-import { ProviderRegistrer } from "@/componentes/ProviderRegistrer";
+
+import { Login } from "@/componentes/Login";
+import Service_typesPage from "./service_types";
+
 
 export default function () {
   return (
     <>
-      <ServicesList />
+      <Login />
     </>
   );
 }
