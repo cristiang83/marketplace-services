@@ -2,6 +2,7 @@ import { SupaImage } from "@/componentes/SupaImage";
 import { getService_types } from "@/services/getService_types";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useQuery } from "@tanstack/react-query";
+import Link from "next/link";
 
 export default function ServiceTypesPage() {
   const supabase = useSupabaseClient();
@@ -21,7 +22,11 @@ export default function ServiceTypesPage() {
               <td>
                 <SupaImage bucket="pictures" fileName={service.picture} />
               </td>
-              <td>{service.name}</td>
+              <td>
+                <Link href={"/service_types/" + service.id}>
+                  {service.name}
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>
