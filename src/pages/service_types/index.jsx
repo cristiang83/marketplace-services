@@ -31,6 +31,7 @@ export default function ServiceTypesPage() {
           ))}
         </tbody>
       </table>
+      
     </div>
   );
 }

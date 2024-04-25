@@ -12,12 +12,15 @@ export default function ServiceTypeProvidersPage() {
     queryKey: ["provider"],
     queryFn: async () => getProvider(supabase, id),
   });
+
+  const goBack = () => {
+    router.back();
+  };
   return (
     <div>
       <h1>Provider</h1>
-      <a href="/provider/create" className="btn btn-success">
-        Add Provider
-      </a>
+      
+      
 
       {providerQuery.isLoading && <div>Loading...</div>}
       <table className="table">
@@ -36,10 +39,16 @@ export default function ServiceTypeProvidersPage() {
               <td>{person.email}</td>
               <td>{person.phone}</td>
               <td>{person.service_types_id?.name}</td>
+              
+              
             </tr>
+            
           ))}
+          
         </tbody>
+        
       </table>
+      <button onClick={goBack}>Go Back</button>
     </div>
   );
 }
