@@ -10,6 +10,8 @@ export default function PersonPage() {
   const id = router.query.id;
   const supabase = useSupabaseClient();
 
+  
+
   const personQuery = useQuery({
     queryKey: ["person", id],
     queryFn: () => getPerson(supabase, id),

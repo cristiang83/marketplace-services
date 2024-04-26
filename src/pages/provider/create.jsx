@@ -5,10 +5,9 @@ import { createPerson } from "@/services/createPerson";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
 import { useMutation, useQuery } from "@tanstack/react-query";
-
+import { getService_types } from "@/services/getProvider";
 import { ImageInput } from "@/componentes/ImageInput";
 import { PersonForm } from "@/componentes/PersonForm";
-import { getService_types } from "@/services/getProvider";
 
 export default function CreatePersonPage() {
   const supabase = useSupabaseClient();
@@ -26,7 +25,6 @@ export default function CreatePersonPage() {
       email: "",
       address: "",
       phone: "",
-      service_types: "",
     },
     resolver: zodResolver(PersonSchema),
   });
@@ -53,7 +51,7 @@ export default function CreatePersonPage() {
       <PersonForm
         form={form}
         onSaveData={handleSaveData}
-        countries={service_typesQuery.data}
+        service_types={service_typesQuery.data}
         isPending={providerQuery.isPending}
         submitLabel="Add Person"
       />
