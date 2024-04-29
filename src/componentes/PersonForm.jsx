@@ -55,7 +55,7 @@ export function PersonForm({
       )}
 
       <label className="form-label">Services</label>
-      <select {...form.register("service_types.id")} className="form-control">
+      <select {...form.register("service_types_id")} className="form-control">
         <option value="">---</option>
         {service_types?.map((service_types) => (
           <option key={service_types.id} value={service_types.id}>

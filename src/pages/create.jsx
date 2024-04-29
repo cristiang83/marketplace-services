@@ -37,7 +37,7 @@ export default function CreatePersonPage() {
     providerQuery.mutate(data, {
       onSuccess: (record) => {
         console.log(record);
-        router.push("/provider");
+        router.push("/provider/" + record.id);
       },
       onError: (e) => {
         alert(e.message);

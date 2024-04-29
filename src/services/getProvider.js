@@ -1,6 +1,3 @@
-
-
-
 export async function getProvider(supabase, sid) {
   let { data: provider, error } = await supabase
     .from("provider")
@@ -24,5 +21,11 @@ export async function getPerson(supabase, id) {
   return person;
 }
 
-
-
+export async function getProviderByUser(supabase, userId) {
+  let { data: person, error } = await supabase
+    .from("provider")
+    .select("*, service_types(*)")
+    .eq("user_id", userId)
+    .single();
+  return person;
+}

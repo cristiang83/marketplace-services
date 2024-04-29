@@ -6,6 +6,6 @@ export const PersonSchema = z.object({
   email: z.string().email("Email not correct formatted"),
   address: z.string().min(1, "Address is required"),
   phone: z.string().min(1, "Phone is required"),
-  service_types_id: z.string().min(1, "Country is required"),
+  service_types_id: z.string().min(1, "Service type is required"),
   picture: z.string().min(1, "Picture is required"),
 });

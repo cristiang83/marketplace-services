@@ -10,28 +10,35 @@ export default function ServiceTypesPage() {
     queryKey: ["service_types"],
     queryFn: async () => getService_types(supabase),
   });
+
   return (
-    <div>
+    <div className="container">
       <h1>Service Types</h1>
 
       {service_typesQuery.isLoading && <div>Loading...</div>}
-      <table className="table">
-        <tbody>
-          {service_typesQuery.data?.map((service) => (
-            <tr key={service.id}>
-              <td>
-                <SupaImage bucket="pictures" fileName={service.picture} />
-              </td>
-              <td>
+      <div className="row">
+        {service_typesQuery.data?.map((service) => (
+          <div key={service.id} className="col-md-4 mb-4">
+            <div className="card" style={{ width: "18rem" }}>
+              <SupaImage
+                width="100%"
+                bucket="pictures"
+                fileName={service.picture}
+                className="card-img-top,"
+                alt={service.name}
+                style={{ width: "500px", objectFit: "cover" }}
+              />
+              <div className="card-body">
+                <h5 className="card-title">{service.name}</h5>
+              
                 <Link href={"/service_types/" + service.id}>
-                  {service.name}
+                  <div className="btn btn-primary">Go somewhere</div>
                 </Link>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
