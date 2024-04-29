@@ -1,6 +1,7 @@
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import Link from "next/link";
 
 export function Login({ tipo, isLogin }) {
   const form = useForm({
@@ -113,6 +114,16 @@ export function Login({ tipo, isLogin }) {
           )}
         </div>
       </form>
+      {isLogin && (
+        <div>
+          <Link href="/register-provider" className="btn btn-outline-info">
+            Register as Provider
+          </Link>
+          <Link href="/register-client" className="btn btn-outline-info">
+            Register as Client
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

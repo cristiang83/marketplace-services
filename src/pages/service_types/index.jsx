@@ -3,6 +3,7 @@ import { getService_types } from "@/services/getService_types";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
+import { securePage } from "@/services/securePage";
 
 export default function ServiceTypesPage() {
   const supabase = useSupabaseClient();
@@ -30,7 +31,7 @@ export default function ServiceTypesPage() {
               />
               <div className="card-body">
                 <h5 className="card-title">{service.name}</h5>
-              
+
                 <Link href={"/service_types/" + service.id}>
                   <div className="btn btn-primary">Go somewhere</div>
                 </Link>

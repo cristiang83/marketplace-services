@@ -1,11 +1,10 @@
 import { Login } from "@/componentes/Login";
-import ServiceTypesPage from './service_types';
 
 
-export default function () {
+export default function IndexPage() {
   return (
     <>
-      <div>ServiceTypesPage</div>
+      <div>Home </div>
     </>
   );
 }

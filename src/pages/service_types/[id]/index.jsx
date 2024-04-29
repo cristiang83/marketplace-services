@@ -3,8 +3,9 @@ import { SupaImage } from "@/componentes/SupaImage";
 import { getProvider } from "@/services/getProvider";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useQuery } from "@tanstack/react-query";
+import { securePage } from "@/services/securePage";
 
-export default function ServiceTypeProvidersPage() {
+export default securePage(function ServiceTypeProvidersPage() {
   const router = useRouter();
   const id = router.query.id;
   const supabase = useSupabaseClient();
@@ -19,8 +20,6 @@ export default function ServiceTypeProvidersPage() {
   return (
     <div>
       <h1>Provider</h1>
-      
-      
 
       {providerQuery.isLoading && <div>Loading...</div>}
       <table className="table">
@@ -39,16 +38,11 @@ export default function ServiceTypeProvidersPage() {
               <td>{person.email}</td>
               <td>{person.phone}</td>
               <td>{person.service_types_id?.name}</td>
-              
-              
             </tr>
-            
           ))}
-          
         </tbody>
-        
       </table>
       <button onClick={goBack}>Go Back</button>
     </div>
   );
-}
+});

@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useSessionContext } from "@supabase/auth-helpers-react";
 
-
 export function securePage(Page) {
   return () => {
     const { isLoading, session } = useSessionContext();
@@ -10,7 +9,7 @@ export function securePage(Page) {
 
     useEffect(() => {
       if (!isLoading && !session) {
-        router.replace("/");
+        router.replace("/login");
       }
     }, [isLoading, session, router]);
 
