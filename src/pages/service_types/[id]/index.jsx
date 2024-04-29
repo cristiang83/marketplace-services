@@ -14,9 +14,11 @@ export default securePage(function ServiceTypeProvidersPage() {
     queryFn: async () => getProvider(supabase, id),
   });
 
-  const goBack = () => {
-    router.back();
+  const goToServiceTypes = () => {
+    router.push('/service_types');
   };
+
+  
   return (
     <div>
       <h1>Provider</h1>
@@ -42,7 +44,7 @@ export default securePage(function ServiceTypeProvidersPage() {
           ))}
         </tbody>
       </table>
-      <button onClick={goBack}>Go Back</button>
+      <button onClick={goToServiceTypes}>All Services</button>
     </div>
   );
 });
