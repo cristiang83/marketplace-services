@@ -10,7 +10,7 @@ export function PersonForm({
 }) {
   return (
     <form onSubmit={form.handleSubmit(onSaveData)}>
-      <label className="form-label">Name</label>
+      <label className="form-label">Name and Lastname</label>
       <input type="text" {...form.register("name")} className="form-control" />
       {form.formState.errors.name && (
         <div className="text-danger">{form.formState.errors.name?.message}</div>
@@ -66,6 +66,18 @@ export function PersonForm({
       {form.formState.errors.service_types_id && (
         <div className="text-danger">
           {form.formState.errors.service_types_id?.message}
+        </div>
+      )}
+
+      <label className="form-label">Description</label>
+      <input
+        type="text"
+        {...form.register("description")}
+        className="form-control"
+      />
+      {form.formState.errors.description && (
+        <div className="text-danger">
+          {form.formState.errors.description?.message}
         </div>
       )}
 

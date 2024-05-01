@@ -13,9 +13,12 @@ export default function ServiceTypesPage() {
   });
 
   return (
-    <div className="container">
-      <h1>Service Types</h1>
-
+    <div className="container mt-4 ">
+      <div className="row">
+        <div className="col-md-12 mb-4 text-center">
+            <h1>Service Types</h1>
+        </div>
+      </div>
       {service_typesQuery.isLoading && <div>Loading...</div>}
       <div className="row">
         {service_typesQuery.data?.map((service) => (
