@@ -22,18 +22,17 @@ export default function ServiceTypesPage() {
           <div key={service.id} className="col-md-4 mb-4">
             <div className="card" style={{ width: "18rem" }}>
               <SupaImage
-                width="100%"
                 bucket="pictures"
                 fileName={service.picture}
-                className="card-img-top,"
+                className="card-img-top"
                 alt={service.name}
-                style={{ width: "500px", objectFit: "cover" }}
+                style={{ width: "100px", objectFit: "cover" }}
               />
-              <div className="card-body">
+              <div className="card-body text-center mb-3">
                 <h5 className="card-title">{service.name}</h5>
 
                 <Link href={"/service_types/" + service.id}>
-                  <div className="btn btn-primary">Go somewhere</div>
+                  <div className="btn btn-primary">Providers</div>
                 </Link>
               </div>
             </div>

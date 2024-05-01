@@ -69,61 +69,82 @@ export function Login({ tipo, isLogin }) {
   };
 
   return (
-    <div className="container">
-      <h2 className="text-center mb-4">{isLogin ? "Login" : "Register"}</h2>
-      <form>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            {...form.register("email")}
-          />
+    <div className="container vh-75" style={{ paddingTop: "10%" }}>
+      <div className="row align-items-center justify-content-center h-20">
+        <div className="col-md-6 py-5" style={{ paddingTop: "10%" }}>
+          <h2 className="text-center mb-4">{isLogin ? "Login" : "Register"}</h2>
+          <form>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">
+                Email
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                {...form.register("email")}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="password" className="form-label">
+                Password
+              </label>
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                {...form.register("password")}
+              />
+            </div>
+            <div className="d-grid gap-2">
+              {isLogin ? (
+                <button
+                  type="button"
+                  className="btn btn-outline-dark mb-3"
+                  onClick={handleLogin}
+                >
+                  Login
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="btn btn-light"
+                  onClick={handleSignup}
+                >
+                  Sign up
+                </button>
+              )}
+            </div>
+            
+          </form>
+          
         </div>
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            {...form.register("password")}
-          />
-        </div>
-        <div className="d-grid gap-2">
-          {isLogin ? (
-            <button
-              type="button"
-              className="btn btn-primary mb-3"
-              onClick={handleLogin}
-            >
-              Login
-            </button>
-          ) : (
-            <button
-              type="button"
-              className="btn btn-outline-primary"
-              onClick={handleSignup}
-            >
-              Sign up
-            </button>
-          )}
-        </div>
-      </form>
+        
+      </div>
       {isLogin && (
-        <div>
-          <Link href="/register-provider" className="btn btn-outline-info">
-            Register as Provider
-          </Link>
-          <Link href="/register-client" className="btn btn-outline-info">
-            Register as Client
-          </Link>
-        </div>
-      )}
+              <div
+                className="d-flex justify-content-center align-items-end"
+                
+              >
+                <div className="">
+                  <Link
+                    href="/register-provider"
+                    className="btn btn-outline-dark"
+                  >
+                    Register as Provider
+                  </Link>
+                </div>
+                <div className="mx-2">
+                  <Link
+                    href="/register-client"
+                    className="btn btn-outline-dark"
+                  >
+                    Register as Client
+                  </Link>
+                </div>
+              </div>
+            )}
     </div>
+    
   );
 }

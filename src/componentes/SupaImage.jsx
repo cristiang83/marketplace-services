@@ -13,5 +13,5 @@ export function SupaImage({ bucket, fileName }) {
   if (!imageURL) {
     return null;
   }
-  return <img src={imageURL} width={100} />;
+  return <img src={imageURL} width="100%" />;
 }
