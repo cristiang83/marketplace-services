@@ -6,10 +6,11 @@ export function securePage(Page) {
   return () => {
     const { isLoading, session } = useSessionContext();
     const router = useRouter();
+    const currentPage = router.asPath;
 
     useEffect(() => {
       if (!isLoading && !session) {
-        router.replace("/login");
+        router.replace("/login?return_to=" + currentPage);
       }
     }, [isLoading, session, router]);
 

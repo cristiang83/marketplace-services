@@ -63,8 +63,7 @@ export default securePage(function EditPerson() {
   const handleSaveData = async (data) => {
     providerQuery.mutate(data, {
       onSuccess: (record) => {
-        console.log(record);
-        alert("Updated");
+        router.push("/service_types");
       },
       onError: (e) => {
         alert(e.message);

@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { securePage } from "@/services/securePage";
 
+
 export default function ServiceTypesPage() {
   const supabase = useSupabaseClient();
   const service_typesQuery = useQuery({
@@ -30,12 +31,13 @@ export default function ServiceTypesPage() {
                 className="card-img-top"
                 alt={service.name}
                 style={{ width: "100px", objectFit: "cover" }}
+                borderRadius-top="20px"
               />
               <div className="card-body text-center mb-3">
-                <h5 className="card-title">{service.name}</h5>
+                <br></br>
 
                 <Link href={"/service_types/" + service.id}>
-                  <div className="btn btn-primary">Providers</div>
+                  <div className="btn btn-primary">{service.name}</div>
                 </Link>
               </div>
             </div>

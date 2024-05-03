@@ -1,1 +1,41 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
+
+body {
+    margin: 0;
+    background-color: #efefef;
+}
+
+
+
+body {
+    background-color: #efefef;
+  }
+  .card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 20px; 
+    transition: box-shadow 0.3s ease;
+    background-color: white;
+    margin: 20px 0;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .card-img-top{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  
+
+  
+  .supaimage {
+    max-width: 100%; /* La imagen ocupará como máximo el ancho de su contenedor */
+    height: auto; /* Se ajustará automáticamente para mantener la relación de aspecto */
+    border-radius: 20px, 20px, 0, 0; 
+    }
+  .card:after {
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 1000ms ease-in, transform 500ms ease-out;
+    transition-delay: 500ms;
+    transform-origin: right;
+  }
