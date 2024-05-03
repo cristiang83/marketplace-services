@@ -12,6 +12,7 @@ export function Login({ tipo, isLogin }) {
   });
   const supabase = useSupabaseClient();
   const router = useRouter();
+  const returnTo = router.query.return_to;
 
   const handleLogin = async () => {
     const values = form.getValues();
@@ -31,10 +32,14 @@ export function Login({ tipo, isLogin }) {
         access_token: data.session.access_token,
         refresh_token: data.session.refresh_token,
       });
-      if (data.user.user_metadata.tipo === "proveedor") {
-        router.push("/edit"); // Redirige a la página de edición
+      if (returnTo) {
+        router.push(returnTo);
       } else {
-        router.push("/service_types");
+        if (data.user.user_metadata.tipo === "proveedor") {
+          router.push("/edit"); // Redirige a la página de edición
+        } else {
+          router.push("/service_types");
+        }
       }
     }
   };
@@ -60,10 +65,14 @@ export function Login({ tipo, isLogin }) {
         access_token: data.session.access_token,
         refresh_token: data.session.refresh_token,
       });
-      if (data.user.user_metadata.tipo === "proveedor") {
-        router.push("/edit"); // Redirige a la página de edición
+      if (returnTo) {
+        router.push(returnTo);
       } else {
-        router.push("/service_types");
+        if (data.user.user_metadata.tipo === "proveedor") {
+          router.push("/edit"); // Redirige a la página de edición
+        } else {
+          router.push("/service_types");
+        }
       }
     }
   };
@@ -115,36 +124,34 @@ export function Login({ tipo, isLogin }) {
                 </button>
               )}
             </div>
-            
           </form>
-          
         </div>
-        
       </div>
       {isLogin && (
-              <div
-                className="d-flex justify-content-center align-items-end"
-                
-              >
-                <div className="">
-                  <Link
-                    href="/register-provider"
-                    className="btn btn-outline-dark"
-                  >
-                    Register as Provider
-                  </Link>
-                </div>
-                <div className="mx-2">
-                  <Link
-                    href="/register-client"
-                    className="btn btn-outline-dark"
-                  >
-                    Register as Client
-                  </Link>
-                </div>
-              </div>
-            )}
+        <div className="d-flex justify-content-center align-items-end">
+          <div className="">
+            <Link
+              href={
+                "/register-provider" +
+                (returnTo ? "?return_to=" + returnTo : "")
+              }
+              className="btn btn-outline-dark"
+            >
+              Register as Provider
+            </Link>
+          </div>
+          <div className="mx-2">
+            <Link
+              href={
+                "/register-client" + (returnTo ? "?return_to=" + returnTo : "")
+              }
+              className="btn btn-outline-dark"
+            >
+              Register as Client
+            </Link>
+          </div>
+        </div>
+      )}
     </div>
-    
   );
 }
