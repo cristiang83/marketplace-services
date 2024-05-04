@@ -5,6 +5,9 @@ import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useQuery } from "@tanstack/react-query";
 import { securePage } from "@/services/securePage";
 import Link from "next/link";
+import { IoIosLogOut } from "react-icons/io";
+import { getService_type } from "@/services/getService_types";
+import Logout from "@/componentes/Logout";
 
 export default securePage(function ServiceTypeProvidersPage() {
   const router = useRouter();
@@ -14,6 +17,10 @@ export default securePage(function ServiceTypeProvidersPage() {
     queryKey: ["provider", id], // Agrega el ID al queryKey para identificar al proveedor
     queryFn: async () => getProvider(supabase, id),
   });
+  const serviceTypeQuery = useQuery({
+    queryKey: ["service_type", id],
+    queryFn: async () => getService_type(supabase, id),
+  });
 
   const goToServiceTypes = () => {
     router.push("/service_types");
@@ -22,8 +29,12 @@ export default securePage(function ServiceTypeProvidersPage() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-12 mb-4 text-center">
-          <h1>Provider</h1>
+        <div className="col-md-6 mb-4 text-center d-flex justify-content-end ">
+          <h1> {serviceTypeQuery.data?.name}</h1>
+        </div>
+        <div className="col-md-6 mb-4 text d-flex justify-content-end">
+          Logout
+          <Logout/>
         </div>
       </div>
       {providerQuery.isLoading && <div>Loading...</div>}
@@ -36,7 +47,7 @@ export default securePage(function ServiceTypeProvidersPage() {
                 fileName={person.picture}
                 width="auto"
                 borderRadius="20px"
-                className="rounded-top"
+                className="card-img-pro"
               />
               <h3>{person.name}</h3>
               <div className="card-body text-center mb-3">

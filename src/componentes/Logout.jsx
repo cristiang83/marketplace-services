@@ -3,8 +3,7 @@ import { useRouter } from "next/router";
 import { securePage } from "@/services/securePage";
 import { IoIosLogOut } from "react-icons/io";
 
-
-export default securePage(function Dashboard() {
+export default securePage(function Logout() {
   const supabase = useSupabaseClient();
   const router = useRouter();
   const user = useUser();
@@ -16,10 +15,9 @@ export default securePage(function Dashboard() {
 
   return (
     <div>
-      Dashboard for <strong>{user?.email || "Not authenticated"}</strong>
-      
-      <IoIosLogOut onClick={handleSignOut} />
-      
+      <IoIosLogOut onClick={handleSignOut} 
+      style={{ fontSize: "2rem" }}
+      />
     </div>
   );
 });

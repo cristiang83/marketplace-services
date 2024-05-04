@@ -5,3 +5,11 @@ export async function getService_types(supabase) {
   return service_types;
 }
 
+export async function getService_type(supabase, id) {
+  let { data: service_type, error } = await supabase
+    .from("service_types")
+    .select("*")
+    .eq("id", id)
+    .single();
+  return service_type;
+}
