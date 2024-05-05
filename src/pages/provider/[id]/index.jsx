@@ -51,6 +51,7 @@ export default securePage(function PersonPage() {
             <article className="foto">
               {personQuery.data?.picture && (
                 <SupaImage
+                  className="imgx"
                   bucket="pictures"
                   fileName={personQuery.data.picture}
                 />

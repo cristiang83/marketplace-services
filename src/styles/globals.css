@@ -15,12 +15,16 @@ body {
     margin: 20px 0;
     border-radius: 20px;
     cursor: pointer;
+    
   }
 
   .card-img-top {
-   
+   height: 196.63px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    max-height: 196.63px;
+   
+    
     
   }
   
@@ -28,6 +32,8 @@ body {
     box-shadow: 2px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    max-height: 196.63px;
+    max-width: 286px;
   }
   
   .supaimage {
@@ -45,7 +51,7 @@ body {
 
   nav {
     width: 100%;
-    max-width: 1200px;
+    max-width: auto;
     display: flex;
     justify-content: space-between; /* Corregido */
     align-items: center;
@@ -88,7 +94,8 @@ section article {
   border-color: black;
   border-style: solid;
   margin: 40px;
-  padding: 20px;
+  padding: 50px;
+  background-color: white;
 }
 .providerdata col-md-3 mb-4 {
   border: 2px;
@@ -96,7 +103,13 @@ section article {
   border-style: solid;
   background-color: aquamarine;
 }
-.foto {
-  height: max-content;
+.foto .imgx{
+  
+  max-height: 400px;
+  
+
    
+}
+.textcenter {
+  text-align: center;
 }

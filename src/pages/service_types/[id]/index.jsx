@@ -49,19 +49,20 @@ export default securePage(function ServiceTypeProvidersPage() {
       <div className="row">
         {providerQuery.data?.map((person) => (
           <div key={person.id} className="col-md-4 mb-4">
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card" style={{ width: "18rem"}}>
               <SupaImage
                 bucket="pictures"
                 fileName={person.picture}
                 width="auto"
                 borderRadius="20px"
                 className="card-img-pro"
+                
               />
-              <h3>{person.name}</h3>
+              <h3 className="textcenter">{person.name}</h3>
               <div className="card-body text-center mb-3">
                 {" "}
                 {/* Mover el div aquí */}
-                <p className="card-title">{person.description}</p>
+                
                 <Link href={"/provider/" + person.id}>
                   <div className="btn btn-primary">Detail</div>
                 </Link>
@@ -70,8 +71,7 @@ export default securePage(function ServiceTypeProvidersPage() {
           </div>
         ))}
       </div>{" "}
-      {/* Cerrar el div de la row */}
-      <button onClick={goToServiceTypes}>All Services</button>
+      
     </div>
   );
 });
