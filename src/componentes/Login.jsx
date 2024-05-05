@@ -83,7 +83,7 @@ export function Login({ tipo, isLogin }) {
         <div className="col-md-6 py-5" style={{ paddingTop: "10%" }}>
           <h2 className="text-center mb-4">{isLogin ? "Login" : "Register"}</h2>
           <form>
-            <div className="mb-3">
+            <div className="mb-4">
               <label htmlFor="email" className="form-label">
                 Email
               </label>

@@ -1,9 +1,6 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-body {
-    margin: 0;
-    background-color: #efefef;
-}
+
 
 
 
@@ -11,7 +8,7 @@ body {
     background-color: #efefef;
   }
   .card {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 2 3px 3px rgba(0, 0, 0, 0.3);
     border-radius: 20px; 
     transition: box-shadow 0.3s ease;
     background-color: white;
@@ -21,13 +18,14 @@ body {
   }
 
   .card-img-top {
-    box-shadow: 2px 2px;
+   
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    
   }
   
   .card-img-pro {
-    box-shadow: 3px;
+    box-shadow: 2px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
   }
@@ -73,3 +71,32 @@ body {
       display: none;
     }
   }
+
+ 
+    
+    
+  section article:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+section article {
+  border-radius: 2px;
+}
+.typecard {
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  margin: 40px;
+  padding: 20px;
+}
+.providerdata col-md-3 mb-4 {
+  border: 2px;
+  
+  border-style: solid;
+  background-color: aquamarine;
+}
+.foto {
+  height: max-content;
+   
+}

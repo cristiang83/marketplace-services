@@ -16,7 +16,8 @@ export default securePage(function Logout() {
   return (
     <div>
       <IoIosLogOut onClick={handleSignOut} 
-      style={{ fontSize: "2rem" }}
+      style={{ fontSize: "3rem" }}
+      className="btn btn-outline-dark"
       />
     </div>
   );

@@ -28,21 +28,22 @@ export default securePage(function ServiceTypeProvidersPage() {
 
   return (
     <div className="container">
-      <div className="row">
-        <nav>
-          <a href="#" className="logo">
-            Logo
-          </a>
-          
-          <div className="col-md-6 mb-4 text d-flex justify-content-end">
-          Logout
-          <Logout />
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link active" aria-current="page" href="/service_types">
+              All Services
+              </a>
+            </li>
+          </ul>
         </div>
-        </nav>
-        <div className="col-md-6 mb-4 text-center d-flex justify-content-end ">
+        <Logout />
+      </nav>
+      <div className="row">
+        <div className="col-md-7 mb-4 text-center d-flex justify-content-end ">
           <h1> {serviceTypeQuery.data?.name}</h1>
         </div>
-        
       </div>
       {providerQuery.isLoading && <div>Loading...</div>}
       <div className="row">
@@ -60,7 +61,7 @@ export default securePage(function ServiceTypeProvidersPage() {
               <div className="card-body text-center mb-3">
                 {" "}
                 {/* Mover el div aquí */}
-                <h5 className="card-title">{person.description}</h5>
+                <p className="card-title">{person.description}</p>
                 <Link href={"/provider/" + person.id}>
                   <div className="btn btn-primary">Detail</div>
                 </Link>
