@@ -29,13 +29,20 @@ export default securePage(function ServiceTypeProvidersPage() {
   return (
     <div className="container">
       <div className="row">
+        <nav>
+          <a href="#" className="logo">
+            Logo
+          </a>
+          
+          <div className="col-md-6 mb-4 text d-flex justify-content-end">
+          Logout
+          <Logout />
+        </div>
+        </nav>
         <div className="col-md-6 mb-4 text-center d-flex justify-content-end ">
           <h1> {serviceTypeQuery.data?.name}</h1>
         </div>
-        <div className="col-md-6 mb-4 text d-flex justify-content-end">
-          Logout
-          <Logout/>
-        </div>
+        
       </div>
       {providerQuery.isLoading && <div>Loading...</div>}
       <div className="row">
