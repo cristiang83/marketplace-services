@@ -1,9 +1,5 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-
-
 body {
     background-color: #efefef;
   }
@@ -14,8 +10,7 @@ body {
     background-color: white;
     margin: 20px 0;
     border-radius: 20px;
-    cursor: pointer;
-    
+    cursor: pointer;    
   }
 
   .card-img-top {
@@ -23,9 +18,7 @@ body {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     max-height: 196.63px;
-   
-    
-    
+    cursor: pointer;
   }
   
   .card-img-pro {
@@ -34,6 +27,8 @@ body {
     border-top-right-radius: 20px;
     max-height: 196.63px;
     max-width: 286px;
+    cursor: pointer;
+    
   }
   
   .supaimage {
@@ -49,7 +44,7 @@ body {
     transform-origin: right;
   }
 
-  nav {
+  nav .navar {
     width: 100%;
     max-width: auto;
     display: flex;
@@ -90,12 +85,17 @@ section article {
   border-radius: 2px;
 }
 .typecard {
+  
+  
   border: 2px;
   border-color: black;
   border-style: solid;
-  margin: 40px;
+  margin: 70px;
   padding: 50px;
   background-color: white;
+  border-radius: 15px;
+  
+  
 }
 .providerdata col-md-3 mb-4 {
   border: 2px;
@@ -112,4 +112,10 @@ section article {
 }
 .textcenter {
   text-align: center;
+  padding-top: 10px;
 }
+.supaimage {
+  border: solid;
+  border-color: black;
+}
+

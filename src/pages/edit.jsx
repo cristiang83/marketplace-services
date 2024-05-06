@@ -16,6 +16,8 @@ import { securePage } from "@/services/securePage";
 
 export default securePage(function EditPerson() {
   const router = useRouter();
+  const returnTo = router.query.return_to;
+
   const user = useUser();
   const supabase = useSupabaseClient();
 
@@ -40,6 +42,7 @@ export default securePage(function EditPerson() {
       email: "",
       address: "",
       phone: "",
+      description: "",
     },
     resolver: zodResolver(PersonSchema),
   });
@@ -63,7 +66,11 @@ export default securePage(function EditPerson() {
   const handleSaveData = async (data) => {
     providerQuery.mutate(data, {
       onSuccess: (record) => {
-        router.push("/service_types");
+        if (returnTo) {
+          router.push(returnTo);
+        } else {
+          router.push("/service_types");
+        }
       },
       onError: (e) => {
         alert(e.message);

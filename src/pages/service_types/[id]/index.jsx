@@ -27,7 +27,9 @@ export default securePage(function ServiceTypeProvidersPage() {
   };
 
   return (
-    <div className="container">
+
+    
+    <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
@@ -40,6 +42,7 @@ export default securePage(function ServiceTypeProvidersPage() {
         </div>
         <Logout />
       </nav>
+      <div className="container">
       <div className="row">
         <div className="col-md-7 mb-4 text-center d-flex justify-content-end ">
           <h1> {serviceTypeQuery.data?.name}</h1>
@@ -71,7 +74,7 @@ export default securePage(function ServiceTypeProvidersPage() {
           </div>
         ))}
       </div>{" "}
-      
+      </div>
     </div>
   );
 });

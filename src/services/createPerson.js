@@ -10,7 +10,7 @@ export async function createPerson(supabase, perosnData) {
     .from("provider")
     .insert([perosnData])
     .select();
-  return data;
+  return data[0];
 }
 export async function updatePerson(supabase, id, personData, isCreate) {
   if (isCreate) {

@@ -2,7 +2,7 @@ import { PersonSchema } from "@/services/schema";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createPerson } from "@/services/createPerson";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { getService_types } from "@/services/getProvider";
@@ -12,6 +12,7 @@ import { PersonForm } from "@/componentes/PersonForm";
 export default function CreatePersonPage() {
   const supabase = useSupabaseClient();
   const router = useRouter();
+  const user = useUser();
 
   const service_typesQuery = useQuery({
     queryKey: ["service_types"],
@@ -30,7 +31,7 @@ export default function CreatePersonPage() {
   });
 
   const providerQuery = useMutation({
-    mutationFn: (data) => createPerson(supabase, data),
+    mutationFn: (data) => createPerson(supabase, { ...data, user_id: user.id }),
   });
 
   const handleSaveData = async (data) => {

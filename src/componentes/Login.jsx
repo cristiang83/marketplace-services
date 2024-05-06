@@ -65,11 +65,15 @@ export function Login({ tipo, isLogin }) {
         access_token: data.session.access_token,
         refresh_token: data.session.refresh_token,
       });
-      if (returnTo) {
-        router.push(returnTo);
+      if (data.user.user_metadata.tipo === "proveedor") {
+        if (returnTo) {
+          router.push("/create?return_to=" + returnTo);
+        } else {
+          router.push("/create"); // Redirige a la página de edición
+        }
       } else {
-        if (data.user.user_metadata.tipo === "proveedor") {
-          router.push("/edit"); // Redirige a la página de edición
+        if (returnTo) {
+          router.push(returnTo);
         } else {
           router.push("/service_types");
         }
